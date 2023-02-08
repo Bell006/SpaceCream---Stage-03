@@ -1,0 +1,271 @@
+:root {
+  --primary-fontstyle: 'Staatliches', sans-serif;
+  --secondary-fontstyle: 'Palanquin', sans-serif;
+
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto; /*Centering content*/
+  max-width: 45rem;
+
+  font-family: var(--primary-fontstyle);
+
+  background: #EFF1FF;
+}
+
+.page header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  animation: topdown 1s;
+
+  background: #9E90DF;
+  margin-bottom: 3rem;
+
+  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+header .heading {
+ 
+
+  width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+header img {
+  margin: 2rem;
+}
+
+header h1 {
+  padding: 0.8rem;
+
+  font-weight: 400;
+  font-size: clamp(4rem, 1rem + 4vw, 5rem);
+  line-height: 3.4rem;
+/* identical to box height, or 85% */
+
+  letter-spacing: 0.5rem;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+
+ header p {
+  max-width: 34rem;
+
+  font-weight: 400;
+  font-size: clamp(1rem, 1.5rem, 1.8rem);
+  line-height: 2.3rem;
+  font-family: var(--secondary-fontstyle);
+
+  color: #ffff;
+  
+  margin: 1.4rem 4rem 6rem;
+}
+
+.card-wrapper {
+  display: grid;
+  text-align: center;
+
+  animation: downtop 1s;
+}
+
+main .card {
+  margin-bottom: 3.2rem;
+  position: relative;
+}
+
+.card img {
+  margin: 0 0.5rem;
+  object-fit: fill;
+
+  transition: 0.2s;
+}
+
+/*transform at hover and transition at normal state*/
+.card img:hover {
+  cursor: pointer;
+  transform: scale(1.09);
+}
+
+.card span {
+  position:absolute;
+  left: 20%;
+  top: 42%;
+
+  padding: 0.5rem 2.5rem;
+  background: #FEEAFA;
+  border-radius: 5rem;
+
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: #4A4E69;
+}
+
+footer {
+  display: none;
+
+}
+
+footer a {
+  text-decoration: none;
+  color: #4A4E69;
+  font-weight:bold;
+}
+
+
+@media (min-width: 1000px) {
+
+  header img {
+    margin: 3.2rem 0;
+  }
+
+  body {
+    margin-top: 6rem;
+    width: 100vw;
+
+    padding: 4rem;
+
+    display: grid;
+    justify-content: center;
+    
+  }
+
+  .page{
+    display: flex;
+    max-width: 130rem;
+    align-items: center;
+  }
+
+  header {
+    min-width: 38rem;
+    background-color: #8E9AAF;
+    margin-right: 5rem;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: row-reverse;
+
+    border-radius: 3rem;
+  }
+  
+
+  header p {
+    font-size: clamp(1rem, 1rem + 2vw, 2rem);
+    color: #FFFFFF;
+
+    margin: 4rem 4rem 6rem;
+    max-width: 28.5rem;
+  }
+
+
+  main .card {
+    margin: 0;
+  }
+
+  .card span {
+    display: none;
+  }
+
+  .card-wrapper {
+    grid-template-areas: "Paletas Shakes Massas"
+    "Picole Shakes Sucos"
+    "Picole Delivery Sucos";
+    
+    gap: 2rem;
+
+    height: fit-content; 
+    width: 100%;
+  }
+
+  .card-wrapper div:nth-child(1) {
+    grid-area: Paletas;
+  }
+
+  .card-wrapper div:nth-child(2) {
+    grid-area: Shakes;
+  }
+
+  .card-wrapper div:nth-child(3) {
+    grid-area: Massas;
+  }
+
+  .card-wrapper div:nth-child(4) {
+    grid-area: Sucos;
+  }
+
+  .card-wrapper div:nth-child(5) {
+    grid-area: Picole;
+  }
+
+  .card-wrapper div:nth-child(6) {
+    grid-area: Delivery;
+  }
+
+  footer {
+    display: flex;
+
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    font-family: var(--secondary-fontstyle);
+  
+    width: 100%;
+
+    margin-top: 4rem;
+  }
+
+  footer p {
+    position: relative;
+    left: 82rem;
+  }
+
+  }
+
+
+
+@keyframes topdown /*choosen animation's name*/ {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px); /*moving 15px down*/
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px); /*moving 15px up*/
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
